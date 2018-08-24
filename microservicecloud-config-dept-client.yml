@@ -2,8 +2,6 @@ spring:
   profiles:
     active: dev
 ---
-spring:
-  profiles: dev
 server:
   port: 8001
 mybatis:
@@ -13,6 +11,7 @@ mybatis:
   - classpath:mybatis/mapper/**/*.xml # mapper映射文件
 
 spring:
+  profiles: dev
   application:
     name: microservicecloud-dept # 对外暴露的服务名称,非常重要!!!!!
   datasource:
@@ -43,8 +42,6 @@ info:
   build-artifactId: $project.artifactId$
   build.version: $project.version$
 ---
-spring:
-  profiles: test
 server:
   port: 8002
 mybatis:
@@ -54,6 +51,7 @@ mybatis:
   - classpath:mybatis/mapper/**/*.xml # mapper映射文件
 
 spring:
+  profiles: test
   application:
     name: microservicecloud-dept # 对外暴露的服务名称,非常重要!!!!!
   datasource:
